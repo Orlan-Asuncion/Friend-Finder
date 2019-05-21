@@ -9,19 +9,26 @@ var PORT = process.env.PORT|| 8080;
 //      res.send('Hello World');
 //  })
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
- 
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json"}));
+
+app.use(express.static("app/public"));
+
+
  
 app.use(function (req, res) {
-  res.setHeader('Content-Type', 'text/plain')
-  res.write('you posted:\n')
-  res.end(JSON.stringify(req.body, null, 2))
+  // res.setHeader('Content-Type', 'text/plain')
+  // res.write('you posted:\n')
+  // res.end(JSON.stringify(req.body, null, 2))
 });
 
 require('./app/routing/htmlRoutes.js')(app); 
+require('./app/routing/apiRoutes.js')(app);
 
 
 app.listen(PORT, function(){

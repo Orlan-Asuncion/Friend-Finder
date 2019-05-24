@@ -3,14 +3,12 @@ var express = require('express');
 var path = require('path');
 
 var app = express();
-var PORT = process.env.PORT|| 8080;
+var PORT = process.env.PORT||3000;
 
-//  app.get('/', function(req, res){
-//      res.send('Hello World');
-//  })
+
 
 // parse application/json
-app.use(bodyParser.json());
+ app.use(bodyParser.json());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,16 +19,11 @@ app.use(express.static("app/public"));
 
 
  
-app.use(function (req, res) {
-  // res.setHeader('Content-Type', 'text/plain')
-  // res.write('you posted:\n')
-  // res.end(JSON.stringify(req.body, null, 2))
-});
 
-require('./app/routing/htmlRoutes.js')(app); 
-require('./app/routing/apiRoutes.js')(app);
+require("./routing/htmlRoutes.js")(app); 
+require("./routing/apiRoutes.js")(app);
 
 
-app.listen(PORT, function(){
-    console.log("App listening on PORT;" + PORT);
-});
+app.listen(PORT, () =>
+    console.log("Listening on port %s",  PORT));
+

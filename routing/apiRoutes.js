@@ -18,7 +18,7 @@ module.exports = function (app) {
         userData = {
             name: req.body.name,
             photo: req.body.photo,
-            scores: b
+            score: b
         };
         console.log(userData);
         console.log("Name: " + userName);
@@ -29,11 +29,11 @@ module.exports = function (app) {
         for (var i = 0; i < friends.length; i++) {
             var currentDiff = 0;
             for(var j = 0;j < friends[0].score.length; j++){
-                currentDiff = currentDiff + Math.abs(friends[i].score[j] - userData.scores[j]); 
+                currentDiff = currentDiff + Math.abs(friends[i].score[j] - userData.score[j]); 
             }
             if( currentDiff < leastDiff){
                 leastDiff = currentDiff;
-                index = i;
+                index = i; 
             }
 
         }

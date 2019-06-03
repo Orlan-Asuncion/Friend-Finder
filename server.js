@@ -15,13 +15,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json"}));
 
-app.use(express.static("app/public"));
+app.use(express.static(__dirname + "/app/public"));
 
 
  
-
-require("./routing/htmlRoutes.js")(app); 
 require("./routing/apiRoutes.js")(app);
+require("./routing/htmlRoutes.js")(app); 
+
 
 
 app.listen(PORT, function (){

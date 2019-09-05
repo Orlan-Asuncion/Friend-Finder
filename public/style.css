@@ -1,0 +1,18 @@
+body{
+    margin-top: 10rem;
+    background: linear-gradient(0deg, red,yellow 80%) fixed no-repeat;
+    
+}
+.jumbotron{
+    background-image: url(https://images.pexels.com/photos/207896/pexels-photo-207896.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    /* background-color: rgb(255, 71, 15); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+#title{
+    font-weight: 500;
+    color: rgb(62, 73, 228);
+
+}

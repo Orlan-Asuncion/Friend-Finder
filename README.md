@@ -57,4 +57,4 @@
 
   ## Deploy to Heroku
 
-  Please click the link. Try it! [link]("https://intense-anchorage-11038.herokuapp.com")
+  Please click the link. Try it! [link](https://intense-anchorage-11038.herokuapp.com/)
